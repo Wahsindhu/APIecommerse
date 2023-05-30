@@ -1,6 +1,9 @@
 # APIecommerse
 Membuat API untuk sebuah aplikasi e-commerce sederhana, API ini bertujuan untuk mengakses serta memanipulasi data entitas dari database
 
+## I Gusti Ngurah Sindhu Wedana
+2205551004
+
 ## About
 Program ini bertujuan untuk membuat backend API untuk aplikasi e-commerce sederhana yang nantinya memberikan response dengan format JSON. Adapun request method pada API memuat: <br/>
 **GET** untuk mendapatkan list atau detail data dari entitas. <br/>
