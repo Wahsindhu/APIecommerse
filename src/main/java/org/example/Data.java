@@ -146,7 +146,7 @@ public class Data {
                         record.put("Discount", rs.getInt("discount"));
                         record.put("Total", rs.getInt("total"));
                         record.put("Note", rs.getInt("note"));
-                        record.put("Id", rs.getInt("id"));
+                        record.put("Id", rs.getInt("id_order"));
 
                         array.add(record);
                     }
