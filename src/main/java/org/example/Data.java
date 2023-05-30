@@ -172,6 +172,23 @@ public class Data {
                     jsonObject.put("Orders Information", array);
                     return jsonObject;
                 }
+                ResultSet rs = statement.executeQuery("SELECT DISTINCT a.id_order, c.id_product,b.id_user,b.first_name,a.note, c.quantity, c.price,d.star, d.description, e.title FROM orders AS a INNER JOIN users AS b ON a.id_user = b.id_user INNER JOIN order_details AS c ON a.id_order = c.id_order INNER JOIN reviews AS d ON a.id_order = d.id_order INNER JOIN products AS e ON c.id_product = e.id_product where a.id_order =" +  path[2]);
+                    while(rs.next()) {
+                        JSONObject record = new JSONObject();
+                        record.put("idOrder", rs.getInt("id_order"));
+                        record.put("idProduct", rs.getInt("id_product"));
+                        record.put("idUser", rs.getInt("id_user"));
+                        record.put("Name", rs.getString("first_name"));
+                        record.put("Note", rs.getInt("note"));
+                        record.put("Quantity", rs.getInt("quantity"));
+                        record.put("Price", rs.getString("price"));
+                        record.put("Star", rs.getInt("star"));
+                        record.put("Description", rs.getString("description"));
+                        record.put("Title", rs.getString("title"));
+                        array.add(record);
+                    }
+                    jsonObject.put("Orders Information", array);
+                    return jsonObject;
             }
 
         } catch(SQLException e) {
